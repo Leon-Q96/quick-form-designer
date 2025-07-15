@@ -1,6 +1,10 @@
+import FieldPanels from '@/components/FieldPanels/FieldPanels'
+
 const FormDesigner = () => {
   return (
-    <div>FormDesigner</div>
+    <div>
+        <FieldPanels />
+    </div>
   )
 }
 
