@@ -11,6 +11,9 @@ importers:
       '@dnd-kit/core':
         specifier: ^6.3.1
         version: 6.3.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@dnd-kit/utilities':
+        specifier: ^3.2.2
+        version: 3.2.2(react@19.1.0)
       antd:
         specifier: 6.0.0-alpha.0
         version: 6.0.0-alpha.0(father@4.6.1(@babel/core@7.28.0)(@types/node@24.0.13)(@types/webpack@5.28.5)(styled-components@6.1.19(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(webpack@5.100.1))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)

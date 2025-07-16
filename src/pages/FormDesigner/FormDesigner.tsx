@@ -1,9 +1,12 @@
 import FieldPanels from '@/components/FieldPanels/FieldPanels'
+import styles from './FormDesigner.module.less'
 
 const FormDesigner = () => {
   return (
-    <div>
-        <FieldPanels />
+    <div className={styles.container}>
+        <div className={styles.left}>
+            <FieldPanels />
+        </div>
     </div>
   )
 }
