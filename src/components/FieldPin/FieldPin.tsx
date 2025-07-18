@@ -1,24 +1,21 @@
-import { useDraggable } from "@dnd-kit/core";
+import { forwardRef } from "react";
 import { Popconfirm, Button } from "antd";
 import type { AnyObject } from "antd/es/_util/type";
 import styles from './FieldPin.module.less'
 
 
-interface FieldPinProps {
+export interface FieldPinProps {
     data: AnyObject;
     type: string;
+    drapProps?: AnyObject;
 }
 
-const FieldPin: React.FC<FieldPinProps> = (props) => {
+const FieldPin = forwardRef<HTMLDivElement, FieldPinProps>((props, ref) => {
     const {
         // data,
         type,
+        drapProps,
     } = props;
-
-
-    const { setNodeRef, attributes, listeners } = useDraggable({
-        id: '123',
-    })
 
     const confirmRemove = () => {
         console.log('confirmRemove')
@@ -27,9 +24,8 @@ const FieldPin: React.FC<FieldPinProps> = (props) => {
     return (
         <div 
             className={styles.pin} 
-            ref={setNodeRef} 
-            {...attributes} 
-            {...listeners} 
+            ref={ref}
+            {...drapProps}
         >
             <div className={styles.pinContent}>
                 FieldPin
@@ -57,6 +53,6 @@ const FieldPin: React.FC<FieldPinProps> = (props) => {
             }
         </div>
     )
-}
+});
 
 export default FieldPin;
