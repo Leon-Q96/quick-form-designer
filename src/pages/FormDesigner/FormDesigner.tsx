@@ -1,18 +1,22 @@
 import { DndContext } from '@dnd-kit/core'
-import useDragOverlay from '@/hooks/useDragOverlay'
-import FieldPanels from '@/components/FieldPanels/FieldPanels'
+import useDragEnd from '@/hooks/useDragContext'
+import FieldPanels from '@/components/Panel/FieldPanels/FieldPanels'
+import FormView from '@/components/Form/FormView'
 import styles from './FormDesigner.module.less'
-
 
 const FormDesigner = () => {
 
-    const { dragOverlay } = useDragOverlay();
+    const { dragOverlay, ...contextProps } = useDragEnd();
 
     return (
-        <DndContext>
+        <DndContext {...contextProps}>
             <div className={styles.container}>
                 <div className={styles.left}>
                     <FieldPanels />
+                </div>
+
+                <div className={styles.center}>
+                    <FormView />
                 </div>
             </div>
             {dragOverlay}

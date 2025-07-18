@@ -7,6 +7,9 @@ const FieldPinDraggable = (props: FieldPinProps) => {
 
     const { setNodeRef, attributes, listeners } = useDraggable({
         id: data.code,
+        data: {
+            data,
+        },
     })
 
     return (
