@@ -1,14 +1,19 @@
 import { useDroppable } from "@dnd-kit/core";
+import classNames from "classnames";
 import styles from "./DropBody.module.less";
 
 const DropBody = () => {
 
-    const { setNodeRef } = useDroppable({
+    const { setNodeRef, isOver } = useDroppable({
         id: 'droppable',
     })
 
+    const classnames = classNames(styles.container, {
+        [styles.over]: isOver,
+    })
+
     return (
-        <div ref={setNodeRef} className={styles.container}>
+        <div ref={setNodeRef} className={classnames}>
             
         </div>
     )
